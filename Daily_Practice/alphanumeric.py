@@ -9,10 +9,13 @@ alphanumberic = { 'a': 'alpha', 'b': 'bravo', 'c': 'charlie', 'd': 'delta',
                  'm': 'mike', 'n': 'november', 'o': 'oscar', 'p': 'papa', 'q': 'quebec', 'r': 'romeo', 's': 'sierra', 't': 'tango',
                    'u': 'uniform', 'v': 'victor', 'w': 'whiskey', 'x': 'xray', 'y': 'yankee', 'z': 'zulu'}
 
-word = input('Please enter word and I will translate to alphanumeric code: ')
+word = input('Please enter word and I will translate to alphanumeric code: ').lower()
 
-# for i in word:
-#     if i == alphanumberic.keys()
-#     print(alphanumberic[i])
 
-print(alphanumberic.keys())
+for i in word:
+    if i in alphanumberic.keys():
+      print(alphanumberic[i])
+    elif i not in alphanumberic.keys():
+       print(i)
+    else:
+       print('not a valid input')
