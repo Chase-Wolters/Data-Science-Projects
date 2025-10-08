@@ -14,7 +14,6 @@ RULES:
 Please make a game mode selection: ''').lower()
 
 attempts = {'1': 'First', '2': 'Second', '3': 'Third'}
-tries = list(attempts)
 secret_num = 100
 
 if start == 'game 1':
@@ -23,7 +22,7 @@ if start == 'game 1':
         if guess == secret_num:
             print(f'Congratulations!!! You found the secret number: {secret_num}')
             exit
-        if guess != secret_num and i != tries[-1]:
+        elif guess != secret_num and guess != attempts[-1]:
             print('Sorry not the secret number')
         else:
             print('Sorry, you did not find the secret number')
