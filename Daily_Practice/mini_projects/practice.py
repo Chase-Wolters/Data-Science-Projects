@@ -15,12 +15,8 @@ RULES:
 Please make a game mode selection: ''').lower()
 
 attempts = {'1': 'First', '2': 'Second', '3': 'Third'}
-<<<<<<< HEAD
-secret_num = 100
-=======
 tries = list(attempts)
 secret_num = rand.randint(1,5)
->>>>>>> 9b8d5d51c32c36decaf838e00cb9bbd1e083ab42
 
 if start == 'game 1':
     for i in attempts:
@@ -28,13 +24,8 @@ if start == 'game 1':
         guess = int(input(f"Please enter your {attempts[i]} guess: "))
         if guess == secret_num:
             print(f'Congratulations!!! You found the secret number: {secret_num}')
-<<<<<<< HEAD
-            exit
-        elif guess != secret_num and guess != attempts[-1]:
-=======
             break
         if guess != secret_num and i != tries[-1]:
->>>>>>> 9b8d5d51c32c36decaf838e00cb9bbd1e083ab42
             print('Sorry not the secret number')
             if guess > secret_num:
                 print('Your guess was too high')
