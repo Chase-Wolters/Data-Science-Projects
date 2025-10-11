@@ -16,7 +16,7 @@ Please make a game mode selection: ''').lower()
 
 attempts = {'1': 'First', '2': 'Second', '3': 'Third'}
 tries = list(attempts)
-secret_num = rand.randint(1,5)
+secret_num = rand.randint(1,100)
 
 if start == 'game 1':
     for i in attempts:
