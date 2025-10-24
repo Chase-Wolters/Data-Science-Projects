@@ -1,13 +1,38 @@
-# numbers = [x + 1 for x in range(0,10)]
-# square = [i ** 2 for i in range(1,11)]
-# print(square)
+''' create a banking app that prompts the user to:
+1. check balance
+2. deposit money
+3. withdraw money
+4. exit
+'''
 
-# fruit = ["apple", "banana", "pineapple", "mango", "orange"]
+def checkbalance(balance):
+    print('*****************************************')
+    print(f'Your balance is: ${balance:.2f}')
+    print('*****************************************')
 
-# big_fruit = [i[0] for i in fruit]
-# print(big_fruit)
+def deposit(balance):
+    print('*****************************************')
+    depo = int(input('Please enter the amount you want to deposit: '))
+    balance += depo
+    print('*****************************************')
+    print(f'Your new balance is ${balance:.2f}')
+    print('*****************************************')
 
-numbers = [1, 2, 5, -3, -5, 2, 9]
+def withdraw(balance):
+    print('*****************************************')
+    while True:
+        withdraw = int(input('Please enter the amout you want to withdraw: '))
+        if withdraw > balance:
+            print('You cannot withdraw more than your balance')
+            continue
+        elif withdraw <= balance:
+            balance -= withdraw
+            print('*****************************************')
+            print(f'You withdrew ${withdraw:.2f}. Your new balance is: ${balance:.2f}')
+            print('*****************************************')
+            break
+        else:
+            print('Please enter a valid number')
 
-negative = [i for i in numbers if i <= 0]
-print(negative)
+deposit(balance)
+withdraw(balance)
