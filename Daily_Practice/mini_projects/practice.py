@@ -4,11 +4,19 @@
 3. withdraw money
 4. exit
 '''
+'''Part II
+Improvements upon the banking app:
+make a frontend interface that looks better
+maybe using flask
+'''
+import flask
 
 def checkbalance(balance):
     print('*****************************************')
     print(f'Your balance is: ${balance:.2f}')
     print('*****************************************')
+    return balance
+
 
 def deposit(balance):
     print('*****************************************')
@@ -17,6 +25,8 @@ def deposit(balance):
     print('*****************************************')
     print(f'Your new balance is ${balance:.2f}')
     print('*****************************************')
+    return balance
+
 
 def withdraw(balance):
     print('*****************************************')
@@ -30,9 +40,30 @@ def withdraw(balance):
             print('*****************************************')
             print(f'You withdrew ${withdraw:.2f}. Your new balance is: ${balance:.2f}')
             print('*****************************************')
-            break
+            return balance
         else:
             print('Please enter a valid number')
 
-deposit(balance)
-withdraw(balance)
+
+balance = 0
+print('Welcome to your personal banking app')
+while True:
+    start = int(input('please select an action from the list:\n'
+'''1. check balance
+2. deposit money
+3. withdraw money
+4. exit \n'''))
+    
+    if start == 1:
+        balance = checkbalance(balance)
+    elif start == 2:
+        balance = deposit(balance)
+    elif start == 3:
+        balance = withdraw(balance)
+    if start == 4:
+        break
+    else:
+        continue
+
+print('Thank you! Have a great day.')
+
