@@ -3,6 +3,7 @@
 2. deposit money
 3. withdraw money
 4. exit
+utilize the if __name__ == '__main__'
 '''
 '''Part II
 Improvements upon the banking app:
@@ -10,6 +11,7 @@ make a frontend interface that looks better
 maybe using flask
 '''
 import flask
+
 
 def checkbalance(balance):
     print('*****************************************')
@@ -44,26 +46,28 @@ def withdraw(balance):
         else:
             print('Please enter a valid number')
 
+def main():
+    balance = 0
+    print('Welcome to your personal banking app')
+    while True:
+        start = int(input('please select an action from the list:\n'
+    '''1. check balance
+    2. deposit money
+    3. withdraw money
+    4. exit \n'''))
+        
+        if start == 1:
+            balance = checkbalance(balance)
+        elif start == 2:
+            balance = deposit(balance)
+        elif start == 3:
+            balance = withdraw(balance)
+        if start == 4:
+            break
+        else:
+            continue
 
-balance = 0
-print('Welcome to your personal banking app')
-while True:
-    start = int(input('please select an action from the list:\n'
-'''1. check balance
-2. deposit money
-3. withdraw money
-4. exit \n'''))
-    
-    if start == 1:
-        balance = checkbalance(balance)
-    elif start == 2:
-        balance = deposit(balance)
-    elif start == 3:
-        balance = withdraw(balance)
-    if start == 4:
-        break
-    else:
-        continue
+    print('Thank you! Have a great day.')
 
-print('Thank you! Have a great day.')
-
+if __name__ == '__main__':
+    main()
